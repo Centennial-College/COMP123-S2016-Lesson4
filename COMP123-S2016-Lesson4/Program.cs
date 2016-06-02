@@ -21,32 +21,25 @@ namespace COMP123_S2016_Lesson4
          */
         public static void Main(string[] args)
         {
-            // create a new instance of the Person class
-            Person tanya = new Person();
-            tanya.Name = "Tanya";
-            tanya.Age = 28;
-            tanya.SaysHello();
-            tanya.ShowAge();
+            // create instance of the Student class
+            Student tommy = new Student("Tommy", 20, "S123456789");
+            tommy.SaysHello();
 
             Console.WriteLine();
 
-            Person kevin = new Person("Kevin");
-            kevin.Age = 23;
-            kevin.SaysHello();
-            kevin.ShowAge();
+            tommy.Studies();
 
             Console.WriteLine();
 
-            Person mark = new Person(30);
-            mark.Name = "Mark";
-            mark.SaysHello();
-            mark.ShowAge();
+            // create instance of the Teacher class
+            Teacher tom = new Teacher("Tom", 47, "T123456789");
+            tom.SaysHello();
 
             Console.WriteLine();
 
-            Person mary = new Person("Mary", 23);
-            mary.SaysHello();
-            mary.ShowAge();
+            tom.Teaches();
+
+
         }
     }
 }

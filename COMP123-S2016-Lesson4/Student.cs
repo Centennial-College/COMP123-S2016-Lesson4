@@ -18,6 +18,7 @@ namespace COMP123_S2016_Lesson4
     {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++++++++++
         private string _studentID;
+        private List<Course> _courses = new List<Course>();
 
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -38,6 +39,18 @@ namespace COMP123_S2016_Lesson4
             set
             {
                 _studentID = value;
+            }
+        }
+
+        public List<Course> Courses
+        {
+            get
+            {
+                return this._courses;
+            }
+            set
+            {
+                this._courses = value;
             }
         }
 
@@ -71,6 +84,27 @@ namespace COMP123_S2016_Lesson4
         public void Studies()
         {
             Console.WriteLine(this.Name + " studies.");
+        }
+
+        /**
+         * <summary>
+         * This method lists all the courses the student is currently enrolled in.
+         * </summary>
+         * 
+         * @method ShowCourses
+         * @returns {void}
+         */
+        public void ShowCourses()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Course List");
+            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++");
+            foreach (Course course in this._courses)
+            {
+                Console.WriteLine("+ "+course.Code+ " " + course.Description);
+            }
+            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine();
         }
     }
 }
